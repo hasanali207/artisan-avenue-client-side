@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const CraftList = () => {
     const { user } = useContext(AuthContext);
     const [items, setItems] = useState([]); // Provide a default empty array
+
 
     useEffect(() => {
         if (user) { // Check if user is defined before making the fetch request
@@ -18,6 +21,36 @@ const CraftList = () => {
         }
     }, [user]); // Fetch items when user changes
 
+const handleDelete = (_id) =>{
+    
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to Delete this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"    
+      }).then((result) => {
+        if (result.isConfirmed) {
+              
+        fetch(`http://localhost:5000/items/${_id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                   Swal.fire({
+            title: "Deleted!",
+            text: "Your Item has been deleted.",
+            icon: "success"
+          });
+            }
+        })
+        }
+      });
+}
+
     return (
         <div className=''>
            
@@ -31,8 +64,9 @@ const CraftList = () => {
                         <h2 className="card-title">{item.item_name}</h2>
                         <p>{item.short_description}</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Edit</button>
-                            <button className="btn btn-primary">Delete</button>
+                           <Link to={`/items/update/${item._id}`}> <button className="btn btn-primary">Edit</button></Link>
+
+                            <button onClick={() => handleDelete(item._id)} className="btn btn-primary">Delete</button>
                         </div>
                     </div>
                 </div>

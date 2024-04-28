@@ -22,7 +22,7 @@ const ArtCraft = () => {
                 <div className="badge badge-outline">{item.subcategory_name}</div>
               </div>
             </div>
-            <Link to={`/DetailsCraftItem/${item._id}`}>
+            <Link to={`/items/${item._id}`}>
   <button className="btn btn-accent">View Details</button>
 </Link>
 

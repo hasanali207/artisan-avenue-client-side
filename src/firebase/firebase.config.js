@@ -1,18 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-require('dotenv').config()
+
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBu_2MaoN1g-Lak-HbuP2DuWcdeaqnY22E",
-  authDomain: "artisan-avenue.firebaseapp.com",
-  projectId: "artisan-avenue",
-  storageBucket: "artisan-avenue.appspot.com",
-  messagingSenderId: "1044502561094",
-  appId: "1:1044502561094:web:e4a99a0eba1d01ece2e547"
+  apiKey: "AIzaSyAzmbJro2RdckCNsoJSkp-9Wem7HTMlrCM",
+  authDomain: "artisan-avenue-fe34e.firebaseapp.com",
+  projectId: "artisan-avenue-fe34e",
+  storageBucket: "artisan-avenue-fe34e.appspot.com",
+  messagingSenderId: "73330597114",
+  appId: "1:73330597114:web:d0a04d6171be5010ad7d43"
 };
-
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);

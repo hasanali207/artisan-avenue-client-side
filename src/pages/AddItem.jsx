@@ -22,8 +22,7 @@ const AddItem = () => {
         const user_name = form.user_name.value
 
         const newItem ={photo, user_name, user_email, stock_status, processing_time, customization, rating, price, short_description, subcategory_name, item_name, };
-        console.log(newItem);
-        
+                
 
                 
         fetch('http://localhost:5000/items', {
@@ -37,9 +36,21 @@ const AddItem = () => {
         .then(res => res.json())
         .then(data => {
             Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to Added this!",
                 icon: "success",
-                title: "Craft & Art",
-                text: "Your Item Added Succesffully",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Added it!"
+              }).then((data) => {
+                if (data.isConfirmed) {
+                  Swal.fire({
+                    title: "Added!",
+                    text: "Your file has been Added.",
+                    icon: "success"
+                  });
+                }
               });
 
             }

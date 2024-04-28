@@ -21,7 +21,7 @@ const SingleCraftItem = ({item}) => {
       <div className="badge badge-outline">Products</div>
     </div>
   </div>
-  <Link to={`DetailsCraftItem/${_id}`}><button className='btn btn-ghost'>View Details</button></Link>
+  <Link to={`items/${_id}`}><button className='btn btn-ghost'>View Details</button></Link>
 </div>  
         </>
     );
