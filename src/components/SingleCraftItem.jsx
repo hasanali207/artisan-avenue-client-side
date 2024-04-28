@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const SingleCraftItem = ({item}) => {
@@ -8,20 +8,22 @@ const SingleCraftItem = ({item}) => {
     return (
         
         <>
-          <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={photo} alt="Shoes" /></figure>
-  <div className="card-body">
+          <div className="card text-[#150B2B]  shadow-xl border-2 border-slate-100 ">
+  <figure><img className='w-full hover:scale-105 duration-300 ease-in-out' src={photo} alt="Shoes" /></figure>
+  <div className="card-body bg-slate-200 ">
     <h2 className="card-title">
      {item_name}
-      <div className="badge badge-secondary">{subcategory_name}</div>
+      
     </h2>
+    <div className="badge bg-orange-400 text-white">{subcategory_name}</div>
     <p>{short_description}</p>
-    <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div> 
-      <div className="badge badge-outline">Products</div>
+    <div className="flex justify-between">
+      <div className="badge badge-outline">Price:{price}</div> 
+      <div className="badge badge-outline">Rating:{rating}</div> 
+      <div className="badge badge-outline">{stock_status}</div>
     </div>
   </div>
-  <Link to={`items/${_id}`}><button className='btn btn-ghost'>View Details</button></Link>
+  <Link to={`items/${_id}`}><button className='rounded-b-2xl bg-gradient-to-r from-purple-700 to-purple-800 py-3 text-white w-full '>View Details</button></Link>
 </div>  
         </>
     );

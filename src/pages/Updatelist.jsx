@@ -56,23 +56,14 @@ const Updatelist = () => {
       .then((res) => res.json())
       .then((data) => {
         Swal.fire({
-          title: "Are you sure?",
+          title: "Update",
           text: "You won't be able to Updated this!",
           icon: "success",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, Added it!"
-        }).then((data) => {
-          if (data.modifiedCount > 0) {
-            Swal.fire({
-              title: "Added!",
-              text: "Your file has been Updated.",
-              icon: "success"
-            });
-          }
-        });
-        
+          confirmButtonText: "Sure!"
+        })        
       });
   };
 

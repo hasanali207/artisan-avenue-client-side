@@ -57,7 +57,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 flex justify-between  items-center border-b-2 ">
+    <div className="navbar px-8 shadow-sm flex justify-between  items-center border-b-2 ">
       <div className="">
         <div className="dropdown z-50 ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,8 +83,8 @@ const Header = () => {
             {NavList}
           </ul>
         </div>
-        <Link to="/" className="text-2xl font-semibold">
-        Web  <span className="text-green ">Name</span>{" "}
+        <Link to="/" className="text-2xl text-slate-600 font-semibold">
+        Artisan  <span className="text-slate-500">Avenue</span>{" "}
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

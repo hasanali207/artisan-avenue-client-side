@@ -36,22 +36,13 @@ const AddItem = () => {
         .then(res => res.json())
         .then(data => {
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to Added this!",
+                title: "Craft Item Added?",
+                text: "Craft Item Data is Added this!",
                 icon: "success",
-                showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, Added it!"
-              }).then((data) => {
-                if (data.isConfirmed) {
-                  Swal.fire({
-                    title: "Added!",
-                    text: "Your file has been Added.",
-                    icon: "success"
-                  });
-                }
-              });
+                confirmButtonText: "Okay!"
+              })
 
             }
         )

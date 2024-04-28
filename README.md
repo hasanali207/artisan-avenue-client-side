@@ -11,4 +11,4 @@
 - uses hot react toast
 - uses sweet alert 
 - uses react icon 
-- 
+- npm i swiper
