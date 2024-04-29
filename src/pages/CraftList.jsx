@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
-import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const CraftList = () => {
     const { user } = useContext(AuthContext);
@@ -10,7 +10,7 @@ const CraftList = () => {
 
     useEffect(() => {
         if (user) { // Check if user is defined before making the fetch request
-            fetch(`http://localhost:5000/craftlist/${user.email}`)
+            fetch(`https://artisan-avenue-server-sigma.vercel.app/craftlist/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setItems(data);
@@ -34,7 +34,7 @@ const handleDelete = (_id) =>{
       }).then((result) => {
         if (result.isConfirmed) {
               
-        fetch(`http://localhost:5000/items/${_id}`, {
+        fetch(`https://artisan-avenue-server-sigma.vercel.app/items/${_id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

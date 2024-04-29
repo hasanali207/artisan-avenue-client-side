@@ -4,6 +4,7 @@ import SingleCraftItem from "../components/SingleCraftItem";
 import Slider from "../components/Slider";
 import CauroselHome from "../components/CauroselHome";
 import art1 from "../assets/Art.jpg";
+import HomeData from "../components/HomeData";
 
 const Home = () => {
   const items = useLoaderData();
@@ -35,12 +36,16 @@ const Home = () => {
       <div>
         <div className=" flex flex-col lg:flex-row justify-between items-center lg:card-side     mb-10">
           <div className="flex-1 py-10 lg:py-40 px-10">
-            <h2 className="card-title text-xl  lg:text-4xl text-slate-700">WE WILL ART FOR YOU
-</h2>
-            <p className="text-slate-500 my-3">Buying as a gift? Why not get it printed! We allow customers the option to have their illustration printed upon receiving their digital order.</p>
-            
+            <h2 className="card-title text-xl  lg:text-4xl text-slate-700">
+              WE WILL ART FOR YOU
+            </h2>
+            <p className="text-slate-500 my-3">
+              Buying as a gift? Why not get it printed! We allow customers the
+              option to have their illustration printed upon receiving their
+              digital order.
+            </p>
+
             <button className="btn btn-primary ">About Us</button>
-           
           </div>
 
           <div className="flex-1">
@@ -50,6 +55,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+            <div>
+            <h2 className="card-title text-xl py-10 lg:text-4xl text-slate-700">
+              All Categories
+            </h2>
+            <HomeData></HomeData>
+            </div>
+      
     </>
   );
 };

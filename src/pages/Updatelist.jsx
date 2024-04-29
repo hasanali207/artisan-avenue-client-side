@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Updatelist = () => {
   const { id } = useParams();
@@ -9,7 +9,7 @@ const Updatelist = () => {
   const {user} = useContext(AuthContext)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/items/update/${id}`)
+    fetch(`https://artisan-avenue-server-sigma.vercel.app/items/update/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setItem(data);
@@ -46,7 +46,7 @@ const Updatelist = () => {
       item_name,
     };
 
-    fetch(`http://localhost:5000/updateItem/${id}`, {
+    fetch(`https://artisan-avenue-server-sigma.vercel.app/updateItem/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

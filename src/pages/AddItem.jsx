@@ -1,7 +1,7 @@
 
-import Swal from 'sweetalert2'
-import { AuthContext } from '../provider/AuthProvider';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 const AddItem = () => {
 
     const { user} = useContext(AuthContext);
@@ -25,7 +25,7 @@ const AddItem = () => {
                 
 
                 
-        fetch('http://localhost:5000/items', {
+        fetch('https://artisan-avenue-server-sigma.vercel.app/items', {
             method : 'POST',
             headers: {
                 'content-type': 'application/json'

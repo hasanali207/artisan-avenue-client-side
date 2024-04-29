@@ -1,16 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from '../App'
+import App from '../App';
+import DetailsCraftItem from "../components/DetailsCraftItem";
 import ErrorPage from "../components/ErrorPage";
+import SingleHomeData from "../components/SingleHomeData";
+import AddItem from "../pages/AddItem";
+import ArtCraft from "../pages/ArtCraft";
+import CraftList from "../pages/CraftList";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import ArtCraft from "../pages/ArtCraft";
-import AddItem from "../pages/AddItem";
-import CraftList from "../pages/CraftList";
-import DetailsCraftItem from "../components/DetailsCraftItem";
 import Register from "../pages/Register";
-import PrivateRoute from "../private/PrivateRoute";
-import UserProfile from "../pages/UserProfile ";
 import Updatelist from "../pages/Updatelist";
+import UserProfile from "../pages/UserProfile ";
+import PrivateRoute from "../private/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       children:[{
         path: "/",
         element: <Home></Home>, 
-        loader: () => fetch('http://localhost:5000/items')
+        loader: () => fetch('https://artisan-avenue-server-sigma.vercel.app/items')
       },
       {
         path: "/Login",
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/UserProfile",
-        element: <UserProfile></UserProfile> 
+        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute> 
       },
       {
         path: "/AddItem",
@@ -42,13 +43,24 @@ const router = createBrowserRouter([
       {
         path: "/ArtCraft",
         element: <ArtCraft></ArtCraft>,
-        loader: () => fetch('http://localhost:5000/items'),
+        loader: () => fetch('https://artisan-avenue-server-sigma.vercel.app/items'),
        
       },
       {
         path: "items/:id",
         element: <PrivateRoute><DetailsCraftItem></DetailsCraftItem></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({params}) => fetch(`https://artisan-avenue-server-sigma.vercel.app/items/${params.id}`)
+        
+      },
+      {
+        path: "/singledata/:id",
+        element: <PrivateRoute><DetailsCraftItem></DetailsCraftItem></PrivateRoute>,
+                
+      },
+      {
+        path: "homedata/:subcategory_name",
+        element: <SingleHomeData></SingleHomeData>,
+        loader: ({params}) => fetch(`https://artisan-avenue-server-sigma.vercel.app/data/homedata/${params.subcategory_name}`)
         
       },
       
