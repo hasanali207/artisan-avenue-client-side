@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-input, textarea, option, select{
-  width: 100%;
-  border: 1px solid gray;
-  padding: 6px;
-  border-radius: 2px
-}
+
+
+
 
 body{
   font-family: "Montserrat", sans-serif;
@@ -31,6 +28,82 @@ body{
     display:block;
     transform:translateY(14px)
 }
+
+
+/* Base styles for form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select,
+input[type="email"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px;  
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select,
+input[type="email"] {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select,
+  input[type="email"] {
+      font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @tailwind base;
 @tailwind components;

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import { Fade } from 'react-awesome-reveal';
 
 const CraftList = () => {
     const { user } = useContext(AuthContext);
@@ -45,6 +46,16 @@ const handleDelete = (_id) =>{
             text: "Your Item has been deleted.",
             icon: "success"
           });
+
+          fetch(`https://artisan-avenue-server-sigma.vercel.app/craftlist/${user.email}`)
+          .then(res => res.json())
+          .then(data => {
+            setItems(data);
+          })
+          .catch(error => {
+            console.error('Error fetching craft list:', error);
+          });
+
             }
         })
         }
@@ -53,20 +64,33 @@ const handleDelete = (_id) =>{
 
     return (
         <div className=''>
-           
+           <div className='w-full py-10 bg-slate-200 rounded-2xl my-3'>
+            <Fade><h1 className='text-3xl text-center my-5'>My Art & Craft Item</h1></Fade>
+            </div >
 
            {items.map((item) => (
-                <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
+                <div key={item._id} className=" mb-3 p-6 flex flex-col lg:flex-row gap-5 border">
+                    <figure className="px-10">
                         <img src={item.photo} alt="Craft Item" className="rounded-xl" />
                     </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="card-title">{item.item_name}</h2>
-                        <p>{item.short_description}</p>
-                        <div className="card-actions">
-                           <Link to={`/items/update/${item._id}`}> <button className="btn btn-primary">Edit</button></Link>
+                    <div className=" flex flex-col lg:flex-row  gap-6">
+                       <div className='flex-1 space-y-3'>
+                            <h2 className="card-title">{item.item_name}</h2>
+                            <p>{item.short_description}</p>
+                       
+                            <p>Price: {item.price}</p>
+                            <p>Rating: {item.rating}</p>
+                                               
+                            <p>Process Time: {item.processing_time}</p>
+                            <p>Customization: {item.customization}</p>
+                        
 
-                            <button onClick={() => handleDelete(item._id)} className="btn btn-primary">Delete</button>
+                       </div>
+                        
+                        <div className="flex justify-center items-center gap-4">
+                           <Link to={`/items/update/${item._id}`}> <button className="btn btn-primary btn-outline">Edit</button></Link>
+
+                            <button onClick={() => handleDelete(item._id)} className="btn btn-primary btn-outline">Delete</button>
                         </div>
                     </div>
                 </div>

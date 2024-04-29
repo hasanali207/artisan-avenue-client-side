@@ -34,7 +34,12 @@ const Home = () => {
       </div>
 
       <div>
-        <div className=" flex flex-col lg:flex-row justify-between items-center lg:card-side     mb-10">
+           
+            <HomeData></HomeData>
+            </div>
+
+      <div>
+        <div className=" mt-20 flex flex-col lg:flex-row justify-between items-center lg:card-side     mb-20">
           <div className="flex-1 py-10 lg:py-40 px-10">
             <h2 className="card-title text-xl  lg:text-4xl text-slate-700">
               WE WILL ART FOR YOU
@@ -45,7 +50,10 @@ const Home = () => {
               digital order.
             </p>
 
-            <button className="btn btn-primary ">About Us</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300" type="submit">
+  About Us
+</button>
+
           </div>
 
           <div className="flex-1">
@@ -56,12 +64,7 @@ const Home = () => {
         </div>
       </div>
 
-            <div>
-            <h2 className="card-title text-xl py-10 lg:text-4xl text-slate-700">
-              All Categories
-            </h2>
-            <HomeData></HomeData>
-            </div>
+            
       
     </>
   );

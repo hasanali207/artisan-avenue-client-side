@@ -2,6 +2,8 @@
 
 
 - B9 A10 Type-02 Requirements
+# live site Url:
+https://artisan-avenue-fe34e.web.app/
 # Client Site Repo:
 - https://github.com/programming-hero-web-course-4/B9A10-client-side-hasanali207
 # SerVer Site Repo:
@@ -12,3 +14,7 @@
 - uses sweet alert 
 - uses react icon 
 - npm i swiper
+
+Challenge Part: 
+- Using  react Awesome Reveal
+- Using React Typewrite

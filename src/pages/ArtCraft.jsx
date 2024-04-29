@@ -1,4 +1,5 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ArtCraft = () => {
@@ -6,6 +7,9 @@ const ArtCraft = () => {
 
   return (
     <>
+          <div className='w-full py-10 bg-slate-200 rounded-2xl my-3'>
+            <Fade><h1 className='text-3xl text-center my-5'>All Art & Craft</h1></Fade>
+            </div >
       <table className="border-collapse border-slate-400  w-full my-20">
   <thead>
     <tr className="border border-slate-400 ">
