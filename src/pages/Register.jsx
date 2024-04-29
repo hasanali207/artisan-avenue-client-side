@@ -1,13 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import { NavLink} from "react-router-dom";
+import { NavLink, Navigate} from "react-router-dom";
 import bannerImageUrl from '../assets/user.png'
 import { AuthContext } from "../provider/AuthProvider";
 const Register = () => {
   const { createUser, logOut, updateUserData } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -16,6 +18,7 @@ const Register = () => {
     const name = form.get("name");
     const photo = form.get("photo");
 
+    
     
     if (password.length < 6) {
       toast.error("Password Must Be 6 Character");
@@ -33,9 +36,11 @@ const Register = () => {
       // Registration successful
       toast.success("Successfully Registered!");
       return updateUserData(name, photo);
+      
     })
     .then(() => {
       logOut();
+      
     })
     .catch((error) => {
       
@@ -49,14 +54,9 @@ const Register = () => {
   return (
     <>
    
-    <div className="px-8 lg:px-0 relative h-[100vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
-    background: `linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(${bannerImageUrl})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-}}>
+  
 
-
-        <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
+        <div  className="card my-10 shadow-2xl bg-slate-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
             Please Register
           </h1>
@@ -116,9 +116,14 @@ const Register = () => {
               </span>
             </div>
             <div className="form-control">
-              <button className="btn bg-black hover:bg-gray-dark hover:text-black text-white">
-                Register
-              </button>
+            <button
+              type="submit"
+              className="group flex items-center justify-center p-0.5 text-center font-medium relative focus:z-10 focus:outline-none text-white bg-gradient-to-r from-purple-500 to-pink-500 enabled:hover:bg-gradient-to-l focus:ring-purple-200 dark:focus:ring-purple-800 rounded-lg focus:ring-2"
+            >
+              <span className="flex items-center transition-all duration-200 rounded-md text-sm px-4 py-2">
+               Register
+              </span>
+            </button>
             </div>
 
             <p>
@@ -131,7 +136,7 @@ const Register = () => {
             <p className="text-red-400"></p>
           </form>
         </div>
-      </div>
+  
 
     
 
