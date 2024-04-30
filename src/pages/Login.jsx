@@ -32,12 +32,13 @@ const Login = () => {
   };
 
   return (
-    <>
-      <div className="card shadow-2xl  bg-base-100 w-full md:w-1/2 lg:w-1/3">
+    <div className="flex justify-center items-center">
+      <div className="card shadow-2xl my-10 bg-slate-100 w-full md:w-1/2 lg:w-1/3">
         <h1 className="text-center text-2xl text-black font-semibold mt-6">
-          Please Login
+           Login
         </h1>
 
+        
         <form onSubmit={handleLogin} className="card-body p-6">
           <div className="form-control">
             <label className="label">
@@ -91,7 +92,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

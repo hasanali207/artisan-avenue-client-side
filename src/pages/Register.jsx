@@ -2,8 +2,7 @@ import { useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import { NavLink, Navigate} from "react-router-dom";
-import bannerImageUrl from '../assets/user.png'
+import { NavLink} from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 const Register = () => {
   const { createUser, logOut, updateUserData } = useContext(AuthContext);
@@ -52,13 +51,13 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div className="flex justify-center">
    
   
 
         <div  className="card my-10 shadow-2xl bg-slate-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
-            Please Register
+            Register
           </h1>
           <form onSubmit={handleRegister} className="card-body p-6">
             <div className="form-control ">
@@ -143,7 +142,7 @@ const Register = () => {
      
 
       
-    </>
+    </div>
   );
 };
 
