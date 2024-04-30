@@ -21,9 +21,9 @@ const Home = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {items
-            .slice(0, 6)
+          .slice(0, 6)
             .reverse()
-            .map((item) => (
+             .map((item) => (
               <SingleCraftItem key={item._id} item={item}></SingleCraftItem>
             ))}
         </div>

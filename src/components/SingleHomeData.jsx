@@ -21,7 +21,7 @@ const SingleHomeData = () => {
     }, [subcategory_name]);
 
     return (
-        <div className='flex justify-between'>
+        <div className='flex justify-between gap-6 py-10'>
             {items && items.map(item => (
                 <div key={item._id} className="card text-[#150B2B] shadow-xl border-2 border-slate-100">
                     <figure><img className='w-full hover:scale-105 duration-300 ease-in-out' src={item.image} alt="Shoes" /></figure>
