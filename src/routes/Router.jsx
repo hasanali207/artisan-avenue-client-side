@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/singledata/:id",
-        element: <PrivateRoute><DetailsCraftItemHome></DetailsCraftItemHome></PrivateRoute>,
+        element: <DetailsCraftItemHome></DetailsCraftItemHome>,
         loader: ({params}) => fetch(`https://artisan-avenue-server-sigma.vercel.app/data/sigledata/${params.id}`)        
       },
 
