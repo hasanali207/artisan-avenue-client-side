@@ -57,7 +57,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar px-8 shadow-sm flex justify-between  items-center border-b-2 ">
+    <div className="navbar px-4  lg:px-8  shadow-sm flex justify-between  items-center border-b-2 ">
       <div className="">
         <div className="dropdown z-50 ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -102,7 +102,7 @@ const Header = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-on fill-current w-10 h-10"
+            className="swap-on text-white fill-current w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -111,7 +111,7 @@ const Header = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-off fill-current w-10 h-10"
+            className="swap-off  fill-current w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -153,7 +153,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className="ml-3">
+        <div className="ml-3 flex flex-col lg:flex-row">
           {/* <Link onClick={handleSignOut}>
             <button>Logout</button>
           </Link> */}
@@ -161,7 +161,7 @@ const Header = () => {
           <Link to="/login">
             <button>Login</button>
           </Link>
-          <span> / </span>
+          <span className="hidden lg:inline-block mx-2"> / </span>
           <Link to="/register">
             <button>Sign up</button>
           </Link>
