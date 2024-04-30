@@ -13,7 +13,7 @@ https://artisan-avenue-fe34e.web.app/
 - uses hot react toast
 - uses sweet alert 
 - uses react icon 
-- npm i swiper
+- Used Swiper js for using Slide in Banner
 
 Challenge Part: 
 - Using  react Awesome Reveal

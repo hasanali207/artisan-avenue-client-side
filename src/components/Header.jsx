@@ -40,12 +40,12 @@ const Header = () => {
       </li>
       <li>
         <NavLink to="/AddItem" className="text-lg" href="">
-          Add Item
+          Add Craft
         </NavLink>
       </li>
       <li>
         <NavLink to="/CraftList" className="text-lg" href="">
-          Craft List
+          My Craft
         </NavLink>
       </li>
       <li>
@@ -57,7 +57,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar px-4  lg:px-8  shadow-sm flex justify-between  items-center border-b-2 ">
+    <div className="navbar px-4 w-full lg:px-8  shadow-sm flex justify-between  items-center border-b-2 ">
       <div className="">
         <div className="dropdown z-50 ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -138,7 +138,7 @@ const Header = () => {
           {user && (
             <ul
               tabIndex={0}
-              className="dropdown-content z-[10] menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content  z-[10] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <a>{user?.displayName}</a>
@@ -158,13 +158,18 @@ const Header = () => {
             <button>Logout</button>
           </Link> */}
 
-          <Link to="/login">
+         {
+          !user && (
+          <>
+            <Link to="/login">
             <button>Login</button>
           </Link>
           <span className="hidden lg:inline-block mx-2"> / </span>
           <Link to="/register">
             <button>Sign up</button>
-          </Link>
+          </Link></>
+          )
+         }
         </div>
       </div>
     </div>
