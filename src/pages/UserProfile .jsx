@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Fade } from "react-awesome-reveal";
 
 const UserProfile = () => {
   const { user, updateUserData } = useContext(AuthContext);
@@ -21,7 +22,13 @@ const UserProfile = () => {
 
   return (
     <div>
-      <h2>User Profile</h2>
+       <div className='w-full py-10 bg-slate-200 rounded-2xl my-3 text-center'>
+            <Fade><h1 className='text-3xl text-center my-5'>Update Your Profile</h1>
+            </Fade>
+            <span>Email: {user?.email}
+
+            </span>
+            </div >
       <div>
         <label>
           Display Name:
@@ -42,7 +49,9 @@ const UserProfile = () => {
           />
         </label>
       </div>
-      <button onClick={handleUpdateProfile}>Update Profile</button>
+      <button onClick={handleUpdateProfile} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 my-3" type="submit">
+  Update User
+</button>
       {user && (
         <div>
           <h3>Current Profile</h3>

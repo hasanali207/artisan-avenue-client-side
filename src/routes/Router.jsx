@@ -12,6 +12,7 @@ import Register from "../pages/Register";
 import Updatelist from "../pages/Updatelist";
 import UserProfile from "../pages/UserProfile ";
 import PrivateRoute from "../private/PrivateRoute";
+import DetailsCraftItemHome from "../components/DetailsCraftItemHome";
 
 const router = createBrowserRouter([
     {
@@ -54,9 +55,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/singledata/:id",
-        element: <PrivateRoute><DetailsCraftItem></DetailsCraftItem></PrivateRoute>,
-                
+        element: <PrivateRoute><DetailsCraftItemHome></DetailsCraftItemHome></PrivateRoute>,
+        loader: ({params}) => fetch(`https://artisan-avenue-server-sigma.vercel.app/data/sigledata/${params.id}`)        
       },
+
+
       {
         path: "homedata/:subcategory_name",
         element: <SingleHomeData></SingleHomeData>,

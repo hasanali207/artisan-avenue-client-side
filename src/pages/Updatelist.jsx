@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
+import { Fade } from "react-awesome-reveal";
 
 const Updatelist = () => {
   const { id } = useParams();
@@ -69,7 +70,9 @@ const Updatelist = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-center my-5">Update Craft Item</h1>
+      <div className='w-full py-10 bg-slate-200 rounded-2xl my-3'>
+            <Fade><h1 className='text-3xl text-center my-5'>Add Craft Item</h1></Fade>
+            </div >
       <form onSubmit={handleUpdate}>
         <div className="grid grid-cols-3 gap-6">
           <div>
@@ -143,9 +146,9 @@ const Updatelist = () => {
             />
           </div>
         </div>
-        <button className="btn btn-secondary" type="submit">
-          Add
-        </button>
+        <button className="bg-blue-500 mt-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300" type="submit">
+  Update 
+</button>
       </form>
     </div>
   );

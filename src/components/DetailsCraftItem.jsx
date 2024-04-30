@@ -6,8 +6,8 @@ const DetailsCraftItem = () => {
    const {photo, user_name, user_email, stock_status, processing_time, customization, rating, price, short_description, subcategory_name, item_name, } = items
     
     
-    const {id} = useParams()
-    console.log(id);
+    
+   
     
     return (
         <div className="max-w-md mx-auto my-10 bg-white shadow-md rounded-md overflow-hidden">

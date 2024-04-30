@@ -23,8 +23,10 @@ const SocialLogin = () => {
           toast.success("Successfully Logged In");
           
         })
-        .catch(() => {
-          toast.error("Email & Password Don't Match");
+        .catch((error) => {
+          toast.error(error);
+          
+
         });
       }
 
